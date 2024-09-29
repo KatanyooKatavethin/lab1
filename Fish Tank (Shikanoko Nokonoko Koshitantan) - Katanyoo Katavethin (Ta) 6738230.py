@@ -30,18 +30,15 @@ nokotanSizeChanged = pygame.transform.scale_by(nokotan, nokotanSize)
 bottle = pygame.image.load("Graphics/Bottle.png")
 bottleSize = 0.30
 bottleSizeChanged = pygame.transform.scale_by(bottle, bottleSize)
-#bottleLocation = bottleSizeChanged.get_rect()
-#bottleLocation.center = (240, 634)
 
 
 MAX_SPEED = 3
-NUMBER_AGENT = 10  # Number of agents in the simulation
+NUMBER_AGENT = 10  
 
-# Factors controlling the behavior of the agents
-COHERENCE_FACTOR = 0.009 # Controls how strongly agents are attracted to the center of mass
-ALIGNMENT_FACTOR = 0.1  # Controls how strongly agents align their direction with others
-SEPARATION_FACTOR = 0.09  # Controls how strongly agents avoid each other
-SEPARATION_DIST = 72  # Minimum distance to maintain between agents
+COHERENCE_FACTOR = 0.009 
+ALIGNMENT_FACTOR = 0.1  
+SEPARATION_FACTOR = 0.09  
+SEPARATION_DIST = 72  
 
 
 #Deer cracker's class
@@ -69,19 +66,12 @@ class NokotanClass:
         self.acceleration = pygame.Vector2(0, 0)
         self.mass = 1  
         self.range = 10
-    
-
-       
-
+      
 
     def updateAnimation(self):
         
          self.agent_frame = nokotanSizeChanged
        
-
-
-
-
 
     def updateMovement(self):
         
@@ -232,8 +222,6 @@ while running:
            mouseX, mouseY = pygame.mouse.get_pos()
            allCrackers = DeerCrackerClass(mouseX, mouseY)
            
-
-
  
     for each_Nokotan in nokotans:
         
@@ -254,14 +242,6 @@ while running:
             each_Nokotan.position.y = 0
         elif each_Nokotan.position.y < 0:
             each_Nokotan.position.y = 768
-
-
-
-
-
-
-
-
 
     pygame.display.flip()
 pygame.quit()  
